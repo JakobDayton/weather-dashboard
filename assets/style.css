@@ -1,0 +1,97 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+.wrapper {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #313336;
+  color:hsl(0, 0%, 100%);
+}
+
+
+.button {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  color: hsl(206, 100%, 91%);
+  background-color: hsl(207, 48%, 26%);
+  border:none;
+  cursor: pointer;
+}
+
+.wrapper {
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+header {
+  text-align: center;
+  padding: 20px;
+  padding-top: 0px;
+  color: hsl(206, 17%, 28%);
+}
+
+.card {
+  display: inline;
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 2%);
+
+}
+
+
+.card-body {
+  min-height: 100px;
+}
+
+
+
+
+
+
+.hide{
+  display: none;
+}
+
+.show{
+  display: block;
+  align-items: center;
+}
+
+.float-right {
+  float: right;
+}
+
+
+
+@media (max-width: 690px) {
+  .btn {
+    font-size: 1rem;
+    margin: 16px 0px 0px 0px;
+    padding: 10px 15px;
+  }
+
+  #password {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .btn {
+    font-size: 0.8rem;
+  }
+}
