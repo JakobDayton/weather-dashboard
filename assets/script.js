@@ -2,7 +2,7 @@ var citySearch = document.querySelector("#search");
 var searchBtnEl = document.querySelector("#search-btn");
 var recentSearches = document.querySelector("#cities-list");
 var cityEl = document.querySelector("#cityName");
-var recentlySearched = JSON.parse(localStorage.getItem("history"));
+var recentlySearched = JSON.parse(localStorage.getItem("history")) || [];
 
 var tempEl = document.querySelector("#temp");
 var humidityEl = document.querySelector("#humidity");
@@ -106,24 +106,20 @@ function forecast(lat, lon){
 }
 
 function getHistory(){
-  searchHistory.innerHTML = "";
+  recentSearches.innerHTML = "";
   
     for (let i = 0; i < recentlySearched.length; i++) {
-      var citiesList = document.createElement("button");
+      var citiesList = document.createElement("li");
       citiesList.textContent = recentlySearched[i];
 
       recentSearches.append(citiesList);
+
+      citiesList.addEventListener("click", function(event){
+        var cityText = event.target.innerHTML
+        getAPI(cityText);
+
+      })
     }
-}
-
-function initHistory(){
-  var History = localStorage.getItem("history");
-  if (History) {
-    searchHistory = JSON.parse(History, city);
-  }
-  getHistory();
-
-
 }
 
 function storeHistory(cities){
